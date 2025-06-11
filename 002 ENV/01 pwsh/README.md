@@ -1,4 +1,3 @@
-
 [GitHub](https://github.com/PowerShell/PowerShell)
 
 下载 msi 版本,方便与 IDE 集成
