@@ -9,11 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: jdx/mise-action@v2
         with:
-          java-version: '9.0.4'
-          distribution: 'temurin'
-      - uses: actions/setup-node@v4
+          version: latest # [default: latest] mise version to install
+          install: true # [default: true] run `mise install`
+          cache: true # [default: true] cache mise using GitHub's cache
+          experimental: true # [default: false] enable experimental features
+          # automatically write this mise.toml file
+          mise_toml: |
+            [tools]
+            java = "24"
+            node = "24"
       - run: gitbook install
       - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/1.0/gitbook-helper-1.0-SNAPSHOT.jar
       - run: java -jar -Dwork.dir=$(pwd) gitbook-helper-1.0-SNAPSHOT.jar
