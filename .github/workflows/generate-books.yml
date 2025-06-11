@@ -19,7 +19,7 @@ jobs:
           mise_toml: |
             [tools]
             java = "24"
-            node = "24"
+            node = "10"
       - run: npm install -g gitbook-cli
       - run: gitbook install
       - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/1.0/gitbook-helper-1.0-SNAPSHOT.jar
