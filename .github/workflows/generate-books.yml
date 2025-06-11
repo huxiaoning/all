@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-#      - run: mv mise.toml ../mise.toml
       - uses: jdx/mise-action@v2
         with:
           version: 2025.6.1 # [default: latest] mise version to install
