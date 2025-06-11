@@ -1,11 +1,11 @@
-name: generate-docs
+name: generate-books
 on:
   push:
     branches:
       - master
 jobs:
-  generate-docs:
-    name: generate-docs
+  generate-books:
+    name: generate-books
     runs-on: ubuntu-latest
     steps:
       - run: pwd
