@@ -8,10 +8,6 @@
 ### 软件列表
 粗糙记录
 ```powershell
-
-
-
-
 > scoop list
 Installed apps:
 
