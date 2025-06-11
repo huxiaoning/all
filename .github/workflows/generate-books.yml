@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pwd
-      - run: ls -a
-      #     - run: mv mise.toml ../mise.toml
+      - run: mv mise.toml ../mise.toml
       - uses: jdx/mise-action@v2
         with:
           version: 2025.6.1 # [default: latest] mise version to install
@@ -19,10 +17,10 @@ jobs:
           cache: true # [default: true] cache mise using GitHub's cache
           experimental: true # [default: false] enable experimental features
           # automatically write this mise.toml file
-          ~/.config/mise/config.toml: |
-            [tools]
-            java = "24"
-            node = "10"
+      #          mise.toml: |
+      #            [tools]
+      #            java = "24"
+      #            node = "10"
       - run: npm install -g gitbook-cli
       - run: gitbook install
       - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/1.0/gitbook-helper-1.0-SNAPSHOT.jar
