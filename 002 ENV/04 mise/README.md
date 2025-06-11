@@ -17,12 +17,12 @@ MISE_ALWAYS_KEEP_INSTALL       false
 MISE_DATA_DIR                  F:\mise
 MISE_GLOBAL_CONFIG_FILE        F:\mise\config.toml
 
-# MISE_FISH_AUTO_ACTIVATE		
+# MISE_FISH_AUTO_ACTIVATE
 ```
 
 ### 安装Java
 
-```pwsh
+```powershell
 # 安装mise托管的java版本
 > mise install java@22 maven@3
 > mise uninstall java@22
