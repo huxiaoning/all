@@ -16,10 +16,10 @@ jobs:
           cache: true # [default: true] cache mise using GitHub's cache
           experimental: true # [default: false] enable experimental features
           # automatically write this mise.toml file
-      #          mise_toml: |
-      #            [tools]
-      #            java = "24"
-      #            node = "10"
+          ../mise_toml: |
+            [tools]
+            java = "24"
+            node = "10"
       - run: npm install -g gitbook-cli
       - run: gitbook install
       - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/1.0/gitbook-helper-1.0-SNAPSHOT.jar
