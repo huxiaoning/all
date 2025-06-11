@@ -35,7 +35,7 @@ jobs:
           ref: 'docs'
       - name: 删除除.git目录外的所有文件(夹)
         run: find . -mindepth 1 -not -name '.git' -exec rm -rf {} +
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: docs
       - run: git config --global user.email "robot@github.com"
