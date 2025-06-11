@@ -43,3 +43,5 @@ jobs:
       - run: git add .
       - run: git commit -m 'UP'
       - run: git push
+      - run: java -version
+      - run: node -v
