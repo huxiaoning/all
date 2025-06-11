@@ -21,7 +21,7 @@ jobs:
       - run: java -jar -Dwork.dir=$(pwd) gitbook-helper-1.0-SNAPSHOT.jar
       - run: rm -rf gitbook-helper-1.0-SNAPSHOT.jar
       - run: gitbook build
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: docs
           path: _book
