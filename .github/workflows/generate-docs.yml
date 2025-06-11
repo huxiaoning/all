@@ -34,7 +34,7 @@ jobs:
         with:
           ref: 'docs'
       - name: 删除除.git目录外的所有文件(夹)
-        run: find . -mindepth 1 -not -name '.git' -exec rm -rf {} +
+        run: ls -a | grep -v '^.git$' | grep -v '^.$' | grep -v '^..$' | xargs -t -I % rm -rf %
       - uses: actions/download-artifact@v4
         with:
           name: docs
