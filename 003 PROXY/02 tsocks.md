@@ -13,4 +13,13 @@ server_port = 7890
 
 # enjoy
 $ tsocks wget https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.5/mihomo-party-windows-1.7.5-ia32-setup.exe
+
+# or
+source /usr/bin/tsocks on
+wget https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.5/mihomo-party-windows-1.7.5-ia32-setup.exe
+
+# or
+$ vim ~/.bashrc
+source /usr/bin/tsocks on
+$ wget https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.5/mihomo-party-windows-1.7.5-ia32-setup.exe
 ```
