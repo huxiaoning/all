@@ -1,4 +1,4 @@
-### tsocks
+### [tsocks](https://github.com/zouguangxian/tsocks)
 强制命令socks代理
 ```bash
 $ wget -O /etc/yum.repos.d/tsocks-epel-7.repo https://copr.fedoraproject.org/coprs/neteler/tsocks/repo/epel-7/neteler-tsocks-epel-7.repo
