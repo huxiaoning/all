@@ -22,7 +22,7 @@ jobs:
       #            node = "10"
       - run: npm install -g gitbook-cli
       - run: gitbook install
-      - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/v3.4/gitbook-helper.jar
+      - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/v3.5/gitbook-helper.jar
       - run: java -jar -Dwork.dir=$(pwd) gitbook-helper.jar
       - run: rm -rf gitbook-helper.jar
       - run: gitbook build
