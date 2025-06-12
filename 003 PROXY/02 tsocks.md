@@ -6,7 +6,7 @@ $ yum install -y tsocks
 
 $ vim /etc/tsocks.conf
 local = 192.168.1.0/255.255.255.0
-local = 172.17.0.0/255.255.0.0
+local = 172.17.0.0/16
 server = 127.0.0.1
 server_type = 5
 server_port = 7890
