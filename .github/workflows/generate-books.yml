@@ -22,11 +22,8 @@ jobs:
       #            node = "10"
       - run: npm install -g gitbook-cli
       - run: gitbook install
-#      - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/1.0/gitbook-helper-1.0-SNAPSHOT.jar
       - run: wget https://github.com/huxiaoning/gitbook-helper/releases/download/v3.1/gitbook-helper.jar
-#      - run: java -jar -Dwork.dir=$(pwd) gitbook-helper-1.0-SNAPSHOT.jar
       - run: java -jar -Dwork.dir=$(pwd) gitbook-helper.jar
-#      - run: rm -rf gitbook-helper-1.0-SNAPSHOT.jar
       - run: rm -rf gitbook-helper.jar
       - run: gitbook build
       - run: mv _book ../output
