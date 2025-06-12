@@ -7,6 +7,4 @@
 > scoop bucket add BrokeThink_ScoopBucket https://github.com/BrokeThink/ScoopBucket
 > scoop install BrokeThink_ScoopBucket/sockscap64
 ```
-
-
-
+![](https://raw.githubusercontent.com/huxiaoning/img/master/20250612152854.png)
