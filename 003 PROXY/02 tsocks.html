@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>📄 当前使用中的工作流 · 笔记</title>
+        <title>📄 tsocks · 笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -70,10 +70,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02 备份不在使用的工作流.html" />
     
-    
-    <link rel="prev" href="./" />
+    <link rel="prev" href="01 sockscap64.html" />
     
 
     <style>
@@ -126,9 +124,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../001 GitHub Actions/">
             
-                <a href="./">
+                <a href="../001 GitHub Actions/">
             
                     
                     📁 GitHub Actions
@@ -140,9 +138,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="01 当前使用中的工作流.html">
+        <li class="chapter " data-level="1.2.1" data-path="../001 GitHub Actions/01 当前使用中的工作流.html">
             
-                <a href="01 当前使用中的工作流.html">
+                <a href="../001 GitHub Actions/01 当前使用中的工作流.html">
             
                     
                     📄 当前使用中的工作流
@@ -153,9 +151,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="02 备份不在使用的工作流.html">
+        <li class="chapter " data-level="1.2.2" data-path="../001 GitHub Actions/02 备份不在使用的工作流.html">
             
-                <a href="02 备份不在使用的工作流.html">
+                <a href="../001 GitHub Actions/02 备份不在使用的工作流.html">
             
                     
                     📄 备份不在使用的工作流
@@ -423,9 +421,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../003 PROXY/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../003 PROXY/">
+                <a href="./">
             
                     
                     📁 PROXY
@@ -437,9 +435,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../003 PROXY/01 sockscap64.html">
+        <li class="chapter " data-level="1.4.1" data-path="01 sockscap64.html">
             
-                <a href="../003 PROXY/01 sockscap64.html">
+                <a href="01 sockscap64.html">
             
                     
                     📄 sockscap64
@@ -450,9 +448,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../003 PROXY/02 tsocks.html">
+        <li class="chapter active" data-level="1.4.2" data-path="02 tsocks.html">
             
-                <a href="../003 PROXY/02 tsocks.html">
+                <a href="02 tsocks.html">
             
                     
                     📄 tsocks
@@ -498,7 +496,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >📄 当前使用中的工作流</a>
+        <a href=".." >📄 tsocks</a>
     </h1>
 </div>
 
@@ -513,49 +511,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="githubworkflowsgenerate-booksyml">.github/workflows/generate-books.yml</h3>
-<pre><code class="lang-yaml"><span class="hljs-attr">name:</span> generate-books
-<span class="hljs-attr">on:</span>
-<span class="hljs-attr">  push:</span>
-<span class="hljs-attr">    branches:</span>
-<span class="hljs-bullet">      -</span> master
-<span class="hljs-attr">jobs:</span>
-<span class="hljs-attr">  generate-books:</span>
-<span class="hljs-attr">    name:</span> generate-books
-<span class="hljs-attr">    runs-on:</span> ubuntu-latest
-<span class="hljs-attr">    steps:</span>
-<span class="hljs-attr">      - uses:</span> actions/checkout@v4
-<span class="hljs-attr">      - uses:</span> jdx/mise-action@v2
-<span class="hljs-attr">        with:</span>
-<span class="hljs-attr">          version:</span> <span class="hljs-number">2025.6</span><span class="hljs-number">.1</span> <span class="hljs-comment"># [default: latest] mise version to install</span>
-<span class="hljs-attr">          install:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># [default: true] run `mise install`</span>
-<span class="hljs-attr">          cache:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># [default: true] cache mise using GitHub&apos;s cache</span>
-<span class="hljs-attr">          experimental:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># [default: false] enable experimental features</span>
-          <span class="hljs-comment"># automatically write this mise.toml file</span>
-      <span class="hljs-comment">#          mise.toml: |</span>
-      <span class="hljs-comment">#            [tools]</span>
-      <span class="hljs-comment">#            java = &quot;24&quot;</span>
-      <span class="hljs-comment">#            node = &quot;10&quot;</span>
-<span class="hljs-attr">      - run:</span> npm install -g gitbook-cli
-<span class="hljs-attr">      - run:</span> gitbook install
-<span class="hljs-attr">      - run:</span> wget https://github.com/huxiaoning/gitbook-helper/releases/download/<span class="hljs-number">1.0</span>/gitbook-helper<span class="hljs-bullet">-1.0</span>-SNAPSHOT.jar
-<span class="hljs-attr">      - run:</span> java -jar -Dwork.dir=$(pwd) gitbook-helper<span class="hljs-bullet">-1.0</span>-SNAPSHOT.jar
-<span class="hljs-attr">      - run:</span> rm -rf gitbook-helper<span class="hljs-bullet">-1.0</span>-SNAPSHOT.jar
-<span class="hljs-attr">      - run:</span> gitbook build
-<span class="hljs-attr">      - run:</span> mv _book ../output
-<span class="hljs-attr">      - name:</span> &#x5220;&#x9664;&#x9664; [.,..] &#x5916;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;(&#x5939;)
-<span class="hljs-attr">        run:</span> ls -a | grep -v <span class="hljs-string">&apos;^.$&apos;</span> | grep -v <span class="hljs-string">&apos;^..$&apos;</span> | xargs -t -I % rm -rf %
-<span class="hljs-attr">      - uses:</span> actions/checkout@v4
-<span class="hljs-attr">        with:</span>
-<span class="hljs-attr">          ref:</span> books
-<span class="hljs-attr">      - name:</span> &#x5220;&#x9664;&#x9664; [.git,.,..] &#x5916;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;(&#x5939;)
-<span class="hljs-attr">        run:</span> ls -a | grep -v <span class="hljs-string">&apos;^.git$&apos;</span> | grep -v <span class="hljs-string">&apos;^.$&apos;</span> | grep -v <span class="hljs-string">&apos;^..$&apos;</span> | xargs -t -I % rm -rf %
-<span class="hljs-attr">      - run:</span> cp -r ../output/* .
-<span class="hljs-attr">      - run:</span> git config --global user.email <span class="hljs-string">&quot;robot@github.com&quot;</span>
-<span class="hljs-attr">      - run:</span> git config --global user.name <span class="hljs-string">&quot;robot&quot;</span>
-<span class="hljs-attr">      - run:</span> git add .
-<span class="hljs-attr">      - run:</span> git commit -m <span class="hljs-string">&apos;UP&apos;</span>
-<span class="hljs-attr">      - run:</span> git push
+                                <h3 id="tsocks">tsocks</h3>
+<p>&#x5F3A;&#x5236;&#x547D;&#x4EE4;socks&#x4EE3;&#x7406;</p>
+<pre><code class="lang-bash">$ wget -O /etc/yum.repos.d/tsocks-epel-7.repo https://copr.fedoraproject.org/coprs/neteler/tsocks/repo/epel-7/neteler-tsocks-epel-7.repo
+$ yum install -y tsocks
+
+$ vim /etc/tsocks.conf
+<span class="hljs-built_in">local</span> = 192.168.1.0/255.0.0.0
+<span class="hljs-built_in">local</span> = 172.17.0.0/255.0.0.0
+server = 127.0.0.1
+server_<span class="hljs-built_in">type</span> = 5
+server_port = 7890
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;</span>
+$ tsocks wget https://github.com/mihomo-party-org/mihomo-party/releases/download/v1.7.5/mihomo-party-windows-1.7.5-ia32-setup.exe
 </code></pre>
 
                                 
@@ -584,14 +553,10 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 📁 GitHub Actions">
+                <a href="01 sockscap64.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 📄 sockscap64">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="02 备份不在使用的工作流.html" class="navigation navigation-next " aria-label="Next page: 📄 备份不在使用的工作流">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -600,7 +565,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"📄 当前使用中的工作流","level":"1.2.1","depth":2,"next":{"title":"📄 备份不在使用的工作流","level":"1.2.2","depth":2,"path":"001 GitHub Actions/02 备份不在使用的工作流.md","ref":"001 GitHub Actions/02 备份不在使用的工作流.md","articles":[]},"previous":{"title":"📁 GitHub Actions","level":"1.2","depth":1,"path":"001 GitHub Actions/README.md","ref":"001 GitHub Actions/README.md","articles":[{"title":"📄 当前使用中的工作流","level":"1.2.1","depth":2,"path":"001 GitHub Actions/01 当前使用中的工作流.md","ref":"001 GitHub Actions/01 当前使用中的工作流.md","articles":[]},{"title":"📄 备份不在使用的工作流","level":"1.2.2","depth":2,"path":"001 GitHub Actions/02 备份不在使用的工作流.md","ref":"001 GitHub Actions/02 备份不在使用的工作流.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"001 GitHub Actions/01 当前使用中的工作流.md","mtime":"2025-06-12T07:38:39.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-12T07:39:20.506Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"📄 tsocks","level":"1.4.2","depth":2,"previous":{"title":"📄 sockscap64","level":"1.4.1","depth":2,"path":"003 PROXY/01 sockscap64.md","ref":"003 PROXY/01 sockscap64.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"003 PROXY/02 tsocks.md","mtime":"2025-06-12T07:38:39.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-12T07:39:20.506Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
