@@ -1,4 +1,4 @@
-### sockscap64
+### [sockscap64](https://sourceforge.net/projects/sockscap64/)
 强制Windows桌面应用走代理
 - signal
 - telegram
