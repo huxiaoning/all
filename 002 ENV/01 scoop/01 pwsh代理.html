@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>📄 基础软件 · 笔记</title>
+        <title>📄 pwsh代理 · 笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -70,10 +70,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../03 windows terminal/" />
+    <link rel="next" href="02 安装scoop.html" />
     
     
-    <link rel="prev" href="05 常用别名.html" />
+    <link rel="prev" href="./" />
     
 
     <style>
@@ -185,20 +185,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../01 pwsh/">
-            
-                <a href="../01 pwsh/">
-            
-                    
-                    📁 pwsh
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="./">
+        <li class="chapter " data-level="1.3.1" data-path="./">
             
                 <a href="./">
             
@@ -212,7 +199,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.2.1" data-path="01 pwsh代理.html">
+        <li class="chapter active" data-level="1.3.1.1" data-path="01 pwsh代理.html">
             
                 <a href="01 pwsh代理.html">
             
@@ -225,7 +212,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.2" data-path="02 安装scoop.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="02 安装scoop.html">
             
                 <a href="02 安装scoop.html">
             
@@ -238,7 +225,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.3" data-path="03 scoop代理.html">
+        <li class="chapter " data-level="1.3.1.3" data-path="03 scoop代理.html">
             
                 <a href="03 scoop代理.html">
             
@@ -251,7 +238,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.4" data-path="04 常用桶.html">
+        <li class="chapter " data-level="1.3.1.4" data-path="04 常用桶.html">
             
                 <a href="04 常用桶.html">
             
@@ -264,7 +251,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.5" data-path="05 常用别名.html">
+        <li class="chapter " data-level="1.3.1.5" data-path="05 常用别名.html">
             
                 <a href="05 常用别名.html">
             
@@ -277,7 +264,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2.6" data-path="06 基础软件.html">
+        <li class="chapter " data-level="1.3.1.6" data-path="06 基础软件.html">
             
                 <a href="06 基础软件.html">
             
@@ -292,6 +279,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02 pwsh/">
+            
+                <a href="../02 pwsh/">
+            
+                    
+                    📁 pwsh
+            
+                </a>
+            
+
             
         </li>
     
@@ -511,7 +511,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >📄 基础软件</a>
+        <a href="../.." >📄 pwsh代理</a>
     </h1>
 </div>
 
@@ -526,8 +526,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x57FA;&#x7840;&#x8F6F;&#x4EF6;">&#x57FA;&#x7840;&#x8F6F;&#x4EF6;</h3>
-<pre><code class="lang-powershell">&gt; scoop install git <span class="hljs-number">7</span>zip aria2 gow sudo
+                                <pre><code class="lang-powershell">&gt; [System.Net.WebRequest]::DefaultWebProxy = <span class="hljs-built_in">New-Object</span> System.Net.WebProxy(<span class="hljs-string">&quot;http://127.0.0.1:7890&quot;</span>)
+
+&gt; echo $?
+True
+
+&gt; [System.Net.WebRequest]::DefaultWebProxy
+
+Address               : http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">7890</span>/
+BypassProxyOnLocal    : False
+BypassList            : {}
+BypassArrayList       : {}
+Credentials           :
+UseDefaultCredentials : False
+
+&gt; irm ifconfig.me
+<span class="hljs-number">104.160</span>.<span class="hljs-number">41.28</span>
+
+<span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x8D70;&#x7684;&#x7CFB;&#x7EDF;&#x4EE3;&#x7406;</span>
+&gt; iwr -Uri https://www.google.com | <span class="hljs-built_in">Select-Object</span> -Property StatusCode
+
+StatusCode
+----------
+       <span class="hljs-number">200</span>
 </code></pre>
 
                                 
@@ -556,12 +577,12 @@
 
             
                 
-                <a href="05 常用别名.html" class="navigation navigation-prev " aria-label="Previous page: 📄 常用别名">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 🗂️ scoop">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../03 windows terminal/" class="navigation navigation-next " aria-label="Next page: 📁 windows terminal">
+                <a href="02 安装scoop.html" class="navigation navigation-next " aria-label="Next page: 📄 安装scoop">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -572,7 +593,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"📄 基础软件","level":"1.3.2.6","depth":3,"next":{"title":"📁 windows terminal","level":"1.3.3","depth":2,"path":"002 ENV/03 windows terminal/README.md","ref":"002 ENV/03 windows terminal/README.md","articles":[]},"previous":{"title":"📄 常用别名","level":"1.3.2.5","depth":3,"path":"002 ENV/02 scoop/05 常用别名.md","ref":"002 ENV/02 scoop/05 常用别名.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"002 ENV/02 scoop/06 基础软件.md","mtime":"2025-06-13T02:13:11.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-13T02:13:48.574Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"📄 pwsh代理","level":"1.3.1.1","depth":3,"next":{"title":"📄 安装scoop","level":"1.3.1.2","depth":3,"path":"002 ENV/01 scoop/02 安装scoop.md","ref":"002 ENV/01 scoop/02 安装scoop.md","articles":[]},"previous":{"title":"🗂️ scoop","level":"1.3.1","depth":2,"path":"002 ENV/01 scoop/README.md","ref":"002 ENV/01 scoop/README.md","articles":[{"title":"📄 pwsh代理","level":"1.3.1.1","depth":3,"path":"002 ENV/01 scoop/01 pwsh代理.md","ref":"002 ENV/01 scoop/01 pwsh代理.md","articles":[]},{"title":"📄 安装scoop","level":"1.3.1.2","depth":3,"path":"002 ENV/01 scoop/02 安装scoop.md","ref":"002 ENV/01 scoop/02 安装scoop.md","articles":[]},{"title":"📄 scoop代理","level":"1.3.1.3","depth":3,"path":"002 ENV/01 scoop/03 scoop代理.md","ref":"002 ENV/01 scoop/03 scoop代理.md","articles":[]},{"title":"📄 常用桶","level":"1.3.1.4","depth":3,"path":"002 ENV/01 scoop/04 常用桶.md","ref":"002 ENV/01 scoop/04 常用桶.md","articles":[]},{"title":"📄 常用别名","level":"1.3.1.5","depth":3,"path":"002 ENV/01 scoop/05 常用别名.md","ref":"002 ENV/01 scoop/05 常用别名.md","articles":[]},{"title":"📄 基础软件","level":"1.3.1.6","depth":3,"path":"002 ENV/01 scoop/06 基础软件.md","ref":"002 ENV/01 scoop/06 基础软件.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"002 ENV/01 scoop/01 pwsh代理.md","mtime":"2025-06-13T02:17:12.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-06-13T02:17:48.170Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
