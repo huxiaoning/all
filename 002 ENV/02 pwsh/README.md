@@ -1,4 +1,12 @@
 [GitHub](https://github.com/PowerShell/PowerShell)
+
+
+
+```powershell
+> scoop install pwsh
+```
+
+
 <br>
 下载 msi 版本,方便与 IDE 集成
 <br>
