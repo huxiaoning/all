@@ -30,5 +30,9 @@ Current Scoop version:
 
 > scoop list
 There aren't any apps installed.
->
+
+# 可选操作
+> scoop install 7zip git
+> scoop bucket rm main
+> scoop bucket add main
 ```
