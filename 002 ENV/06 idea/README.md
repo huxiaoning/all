@@ -9,4 +9,6 @@
 > scoop install jetbrains-toolbox
 ```
 
+Open Folder as IntelliJ IDEA Project
+<br/>
 ![](https://raw.githubusercontent.com/huxiaoning/img/master/20250611152821.png)
