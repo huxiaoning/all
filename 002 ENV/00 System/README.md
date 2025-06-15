@@ -30,7 +30,10 @@
 
 完成后重启，拔掉U盘，系统恢复成功
 
-
+```
+scoop install ventoy
+scoop install anyburn
+```
 ### 开机启动按键
 - 华硕
 - 惠普
