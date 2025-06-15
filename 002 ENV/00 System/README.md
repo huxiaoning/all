@@ -2,6 +2,7 @@
 
 - [Ventoy](https://www.ventoy.net/cn/index.html)
 - [微PE](https://www.wepe.com.cn/)
+- [Win11](https://www.freedidi.com/13121.html)
 - DiskGenius
 
 - 安装完系统后用 DiskGenius 做全量C盘备份
