@@ -9,6 +9,7 @@
 > scoop install jetbrains-toolbox
 ```
 
-Open Folder as IntelliJ IDEA Project
+Open Folder as IntelliJ IDEA Project    -   文件夹
+Open File as IntelliJ IDEA Project      -   文件
 <br/>
 ![](https://raw.githubusercontent.com/huxiaoning/img/master/20250611152821.png)
