@@ -13,3 +13,11 @@ Open Folder as IntelliJ IDEA Project    -   文件夹
 Open File as IntelliJ IDEA Project      -   文件
 <br/>
 ![](https://raw.githubusercontent.com/huxiaoning/img/master/20250611152821.png)
+
+```
+https://github.com/saxpjexck/lsix
+https://3.jetbra.in/
+
+scoop bucket add xrgzs_sdoog https://github.com/xrgzs/sdoog
+scoop install xrgzs_sdoog/jetbra
+```
