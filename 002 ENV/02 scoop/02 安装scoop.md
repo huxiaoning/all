@@ -34,6 +34,7 @@ There aren't any apps installed.
 # 可选操作
 > scoop install 7zip
 > scoop install git
+> scoop install aria2
 
 > scoop bucket rm main
 > scoop bucket add main
