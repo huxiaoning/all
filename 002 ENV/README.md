@@ -18,6 +18,8 @@ $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 $ irm get.scoop.sh -outfile 'install.ps1'
 $ .\install.ps1
 
+$ scoop alias add ls 'scoop list'
+
 $ scoop config proxy 172.25.128.1:7890
 
 $ scoop install 7zip
