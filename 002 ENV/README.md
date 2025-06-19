@@ -41,5 +41,7 @@ $ scoop install windows-terminal
 $ reg import "C:\Users\WDAGUtilityAccount\scoop\apps\windows-terminal\current\install-context.reg"
 $ scoop install extras/vcredist2022
 
-mise use -g java@24 maven@3 node@10
+$ mise use -g java@24 maven@3 node@10
+
+$ scoop install idea-ultimate
 ```
