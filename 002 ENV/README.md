@@ -10,6 +10,7 @@
 $gateway = (Get-NetIPConfiguration).IPv4DefaultGateway.NextHop
 $proxyIP = $gateway
 $proxy = "http://"+$proxyIP+":7890"
+$scoop_proxy = $proxyIP+":7890"
 
 $ mkdir C:\Users\WDAGUtilityAccount\Documents\PowerShell\
 
@@ -29,7 +30,7 @@ $ .\install.ps1
 
 $ scoop alias add ls 'scoop list'
 
-$ scoop config proxy $proxy
+$ scoop config proxy $scoop_proxy
 
 $ scoop install 7zip
 C:\Users\WDAGUtilityAccount\scoop\apps\7zip\current\install-context.reg
