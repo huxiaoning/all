@@ -7,11 +7,15 @@
 
 ### 沙盒
 ```bash
+$gateway = (Get-NetIPConfiguration).IPv4DefaultGateway.NextHop
+$proxyIP = $gateway
+$proxy = "http://"+$proxyIP+":7890"
+
 $ mkdir C:\Users\WDAGUtilityAccount\Documents\PowerShell\
 $ notepad $profile
-[System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy("http://172.25.128.1:7890")
-$env:HTTP_PROXY="http://172.25.128.1:7890"
-$env:HTTPS_PROXY="http://172.25.128.1:7890"
+[System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy($proxy)
+$env:HTTP_PROXY=$proxy
+$env:HTTPS_PROXY=$proxy
 
 # 重新打开 pwsh
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -20,7 +24,7 @@ $ .\install.ps1
 
 $ scoop alias add ls 'scoop list'
 
-$ scoop config proxy 172.25.128.1:7890
+$ scoop config proxy $proxy
 
 $ scoop install 7zip
 C:\Users\WDAGUtilityAccount\scoop\apps\7zip\current\install-context.reg
