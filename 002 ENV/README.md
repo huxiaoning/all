@@ -12,12 +12,17 @@ $proxyIP = $gateway
 $proxy = "http://"+$proxyIP+":7890"
 
 $ mkdir C:\Users\WDAGUtilityAccount\Documents\PowerShell\
-$ notepad $profile
-[System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy($proxy)
-$env:HTTP_PROXY=$proxy
-$env:HTTPS_PROXY=$proxy
 
-# 重新打开 pwsh
+#$ notepad $profile
+#[System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy($proxy)
+#$env:HTTP_PROXY=$proxy
+#$env:HTTPS_PROXY=$proxy
+$ echo "[System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy(`"$proxy`")" > $profile
+$ echo "`$env:HTTP_PROXY`=`"$proxy`"" >> $profile
+$ echo "`$env:HTTPS_PROXY`=`"$proxy`"" >> $profile
+. $profile
+
+# 安装scoop
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 $ irm get.scoop.sh -outfile 'install.ps1'
 $ .\install.ps1
