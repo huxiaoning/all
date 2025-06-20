@@ -53,6 +53,8 @@ $ scoop install extras/vcredist2022
 
 $ scoop install mise
 $ mise use -g java@24 maven@3 node@10
+$ echo "mise activate pwsh | Out-String | Invoke-Expression" >> $profile
+$ . $profile
 
 $ scoop install idea-ultimate
 ```
