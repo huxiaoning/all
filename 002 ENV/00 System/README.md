@@ -37,3 +37,12 @@ scoop install anyburn
 ### 开机启动按键
 - 华硕
 - 惠普
+
+### 激活
+```bash
+irm https://massgrave.dev/get | iex
+https://gravesoft.dev/
+# 下载office365 选择那个带星星的
+https://gravesoft.dev/office_c2r_links#chinese-simplified-zh-cn
+https://github.com/gravesoft/CAS
+```
