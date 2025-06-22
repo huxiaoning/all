@@ -36,7 +36,9 @@ scoop install anyburn
 ```
 ### 开机启动按键
 - 华硕
+  - 按 F2 或者 DEL
 - 惠普
+  - 按 ESC 
 
 ### 激活
 ```bash
