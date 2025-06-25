@@ -2,7 +2,7 @@
 
 下载 msi 版本,方便与 IDE 集成
 <br>
-[PowerShell-7.5.1-win-x64.msi](https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-x64.msi)
+[PowerShell-7.5.2-win-x64.msi](https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-x64.msi)
 <br>
 
 ```powershell
