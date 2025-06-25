@@ -3,7 +3,7 @@
 ```powershell
 scoop install yt-dlp
 
-yt-dlp --proxy socks5://127.0.0.1:7890 --cookies "C:\Users\huxiaoning\Downloads\www.youtube.com_cookies.txt"  "https://www.youtube.com/watch?v=Rz__ODnIhLg&list=PLADrJe98EUfE8en2t7yxGwoGZUlG2yTMQ"
+yt-dlp --proxy socks5://127.0.0.1:7890 "https://www.youtube.com/watch?v=Rz__ODnIhLg&list=PLADrJe98EUfE8en2t7yxGwoGZUlG2yTMQ"
 
 [youtube:tab] Extracting URL: https://www.youtube.com/watch?v=Rz__ODnIhLg&list=PLADrJe98EUfE8en2t7yxGwoGZUlG2yTMQ
 [youtube:tab] Downloading playlist PLADrJe98EUfE8en2t7yxGwoGZUlG2yTMQ - add --no-playlist to download just the video Rz__ODnIhLg
