@@ -29,3 +29,9 @@ Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-coo
 ```powershell
 scoop install youtube-dl-gui
 ```
+
+
+#### 03 media-downloader
+```powershell
+scoop install media-downloader
+```
