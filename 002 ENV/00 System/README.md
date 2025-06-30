@@ -48,3 +48,11 @@ https://gravesoft.dev/
 https://gravesoft.dev/office_c2r_links#chinese-simplified-zh-cn
 https://github.com/gravesoft/CAS
 ```
+
+### 驱动
+[驱动人生海外版](https://www.drivethelife.com/)
+```powershell
+# 还是这个靠普些,可以在设置-网络中设置代理加速下载
+scoop bucket add xrgzs_sdoog https://github.com/xrgzs/sdoog
+scoop install xrgzs_sdoog/iobit-driver-booster
+```
