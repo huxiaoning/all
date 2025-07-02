@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>📄 sockscap64 · 笔记</title>
+        <title>📄 PixelOS Wifi受限 · 笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,8 +69,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="02 tsocks.html" />
     
     
     <link rel="prev" href="./" />
@@ -520,9 +518,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../003 PROXY/">
             
-                <a href="./">
+                <a href="../003 PROXY/">
             
                     
                     🗂️ PROXY
@@ -534,9 +532,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="01 sockscap64.html">
+        <li class="chapter " data-level="1.4.1" data-path="../003 PROXY/01 sockscap64.html">
             
-                <a href="01 sockscap64.html">
+                <a href="../003 PROXY/01 sockscap64.html">
             
                     
                     📄 sockscap64
@@ -547,9 +545,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="02 tsocks.html">
+        <li class="chapter " data-level="1.4.2" data-path="../003 PROXY/02 tsocks.html">
             
-                <a href="02 tsocks.html">
+                <a href="../003 PROXY/02 tsocks.html">
             
                     
                     📄 tsocks
@@ -560,9 +558,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="03 socksify.html">
+        <li class="chapter " data-level="1.4.3" data-path="../003 PROXY/03 socksify.html">
             
-                <a href="03 socksify.html">
+                <a href="../003 PROXY/03 socksify.html">
             
                     
                     📄 socksify
@@ -674,9 +672,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../006 小米12/">
+        <li class="chapter " data-level="1.7" data-path="./">
             
-                <a href="../006 小米12/">
+                <a href="./">
             
                     
                     🗂️ 小米12
@@ -688,9 +686,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../006 小米12/04 PixelOS Wifi受限.html">
+        <li class="chapter active" data-level="1.7.1" data-path="04 PixelOS Wifi受限.html">
             
-                <a href="../006 小米12/04 PixelOS Wifi受限.html">
+                <a href="04 PixelOS Wifi受限.html">
             
                     
                     📄 PixelOS Wifi受限
@@ -736,7 +734,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >📄 sockscap64</a>
+        <a href=".." >📄 PixelOS Wifi受限</a>
     </h1>
 </div>
 
@@ -751,17 +749,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="sockscap64"><a href="https://sourceforge.net/projects/sockscap64/" target="_blank">sockscap64</a></h3>
-<p>&#x5F3A;&#x5236;Windows&#x684C;&#x9762;&#x5E94;&#x7528;&#x8D70;&#x4EE3;&#x7406;</p>
-<ul>
-<li>signal</li>
-<li>telegram
-<br>
-&#x8FD9;&#x4E9B;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x4E0D;&#x652F;&#x6301;http&#x4EE3;&#x7406;&#x4E86;,&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;tun&#x6A21;&#x5F0F;&#x7684;&#x8BDD;&#x5C31;&#x7528; <a href="https://sourceforge.net/projects/sockscap64/" target="_blank">sockscap64</a> &#x5F3A;&#x5236;&#x5176;&#x8D70;socks5&#x4EE3;&#x7406;<pre><code class="lang-powershell">&gt; scoop bucket add BrokeThink_ScoopBucket https://github.com/BrokeThink/ScoopBucket
-&gt; scoop install BrokeThink_ScoopBucket/sockscap64
+                                <h3 id="pixelos-wifi&#x53D7;&#x9650;">PixelOS Wifi&#x53D7;&#x9650;</h3>
+<pre><code class="lang-powershell">adb shell settings put global captive_portal_mode <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># &#x5176;&#x5B9E;&#x4E0A;&#x9762;&#x90A3;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x662F;&#x7F51;&#x4E0A;&#x641C;&#x7D22;&#x5230;&#x7684;&#xFF0C;&#x5907;&#x4EFD;&#x4E0B;&#x5427;</span>
+adb shell settings put global captive_portal_http_url http://captive.v2ex.co/generate_204
+adb shell settings put global captive_portal_https_url http://captive.v2ex.co/generate_204
 </code></pre>
-<img src="https://raw.githubusercontent.com/huxiaoning/img/master/20250612152854.png" alt=""></li>
-</ul>
 
                                 
                                 </section>
@@ -789,14 +783,10 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 🗂️ PROXY">
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 🗂️ 小米12">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="02 tsocks.html" class="navigation navigation-next " aria-label="Next page: 📄 tsocks">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -805,7 +795,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"📄 sockscap64","level":"1.4.1","depth":2,"next":{"title":"📄 tsocks","level":"1.4.2","depth":2,"path":"003 PROXY/02 tsocks.md","ref":"003 PROXY/02 tsocks.md","articles":[]},"previous":{"title":"🗂️ PROXY","level":"1.4","depth":1,"path":"003 PROXY/README.md","ref":"003 PROXY/README.md","articles":[{"title":"📄 sockscap64","level":"1.4.1","depth":2,"path":"003 PROXY/01 sockscap64.md","ref":"003 PROXY/01 sockscap64.md","articles":[]},{"title":"📄 tsocks","level":"1.4.2","depth":2,"path":"003 PROXY/02 tsocks.md","ref":"003 PROXY/02 tsocks.md","articles":[]},{"title":"📄 socksify","level":"1.4.3","depth":2,"path":"003 PROXY/03 socksify.md","ref":"003 PROXY/03 socksify.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"003 PROXY/01 sockscap64.md","mtime":"2025-07-02T00:31:12.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-02T00:32:00.093Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"📄 PixelOS Wifi受限","level":"1.7.1","depth":2,"previous":{"title":"🗂️ 小米12","level":"1.7","depth":1,"path":"006 小米12/README.md","ref":"006 小米12/README.md","articles":[{"title":"📄 PixelOS Wifi受限","level":"1.7.1","depth":2,"path":"006 小米12/04 PixelOS Wifi受限.md","ref":"006 小米12/04 PixelOS Wifi受限.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"006 小米12/04 PixelOS Wifi受限.md","mtime":"2025-07-02T00:31:12.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-02T00:32:00.093Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
