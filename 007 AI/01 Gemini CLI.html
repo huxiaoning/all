@@ -808,8 +808,51 @@ mise exec node@<span class="hljs-number">24</span> -- npm install -g @google/gem
 mise exec node@<span class="hljs-number">24</span> -- gemini
 </code></pre>
 <h4 id="docker">docker</h4>
-<pre><code class="lang-powershell">
+<pre><code class="lang-powershell"><span class="hljs-comment">#docker pull jdxcode/mise:latest</span>
+<span class="hljs-comment">#docker run -it --rm --name mise jdxcode/mise:latest mise exec node@24 -- npx https://github.com/google-gemini/gemini-cli</span>
+<span class="hljs-comment">#docker run jdxcode/mise x node@24 -- npx https://github.com/google-gemini/gemini-cli</span>
 
+<span class="hljs-comment">#docker pull ubuntu:latest</span>
+<span class="hljs-comment">#docker run -it --rm --name ubuntu ubuntu:latest bash</span>
+<span class="hljs-comment">#apt update -y</span>
+<span class="hljs-comment">#apt install -y curl</span>
+<span class="hljs-comment">#curl https://mise.run | sh</span>
+<span class="hljs-comment">#/root/.local/bin/mise exec node@24 -- npm install -g @google/gemini-cli</span>
+<span class="hljs-comment">#/root/.local/bin/mise exec node@24 -- gemini</span>
+
+docker run -it --rm --name ubuntu ubuntu:latest bash
+apt update -y
+apt install -y gpg sudo wget curl
+install -dm <span class="hljs-number">755</span> /etc/apt/keyrings
+wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg <span class="hljs-number">1</span>&gt; /dev/null
+echo <span class="hljs-string">&quot;deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main&quot;</span> | sudo tee /etc/apt/sources.list.d/mise.list
+apt update
+apt install -y mise
+
+mise exec node@<span class="hljs-number">24</span> -- npx https://github.com/google-gemini/gemini-cli
+<span class="hljs-comment"># &#x6216;&#x8005;</span>
+mise exec node@<span class="hljs-number">24</span> -- npm install -g @google/gemini-cli
+GEMINI_API_KEY=https://aistudio.google.com/apikey
+mise exec node@<span class="hljs-number">24</span> -- gemini
+</code></pre>
+<pre><code class="lang-dockerfile"><span class="hljs-keyword">FROM</span> ubuntu:latest
+<span class="hljs-keyword">RUN</span> <span class="bash">apt update -y \
+    &amp;&amp; apt install -y gpg sudo wget curl \
+    &amp;&amp; install -dm 755 /etc/apt/keyrings \
+    &amp;&amp; wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1&gt; /dev/null \
+    &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main&quot;</span> | sudo tee /etc/apt/sources.list.d/mise.list \
+    &amp;&amp; apt update \
+    &amp;&amp; apt install -y mise \
+    &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;eval &quot;$(mise activate bash)&quot;&apos;</span> &gt;&gt; /etc/profile.d/mise.sh
+</span></code></pre>
+<pre><code class="lang-powershell">docker build -t mise:<span class="hljs-number">1.0</span> .
+docker run -it --rm --name mise mise:<span class="hljs-number">1.0</span> bash
+
+mise ls
+mise use -g node@<span class="hljs-number">24</span>
+mise set -g GEMINI_API_KEY=https://aistudio.google.com/apikey
+npm install -g @google/gemini-cli
+gemini
 </code></pre>
 
                                 
@@ -850,7 +893,7 @@ mise exec node@<span class="hljs-number">24</span> -- gemini
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"📄 Gemini CLI","level":"1.8.1","depth":2,"previous":{"title":"🗂️ AI","level":"1.8","depth":1,"path":"007 AI/README.md","ref":"007 AI/README.md","articles":[{"title":"📄 Gemini CLI","level":"1.8.1","depth":2,"path":"007 AI/01 Gemini CLI.md","ref":"007 AI/01 Gemini CLI.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"007 AI/01 Gemini CLI.md","mtime":"2025-07-07T02:14:06.498Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-07T02:14:47.817Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"📄 Gemini CLI","level":"1.8.1","depth":2,"previous":{"title":"🗂️ AI","level":"1.8","depth":1,"path":"007 AI/README.md","ref":"007 AI/README.md","articles":[{"title":"📄 Gemini CLI","level":"1.8.1","depth":2,"path":"007 AI/01 Gemini CLI.md","ref":"007 AI/01 Gemini CLI.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"007 AI/01 Gemini CLI.md","mtime":"2025-07-07T04:03:43.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-07T04:04:20.528Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
