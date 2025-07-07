@@ -55,7 +55,7 @@ RUN apt update -y \
     && echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list \
     && apt update \
     && apt install -y mise \
-    && echo 'eval "$(mise activate bash)"' >> /etc/profile.d/mise.sh
+    && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
 ```
 ```powershell
 docker build -t mise:1.0 .
@@ -64,6 +64,6 @@ docker run -it --rm --name mise mise:1.0 bash
 mise ls
 mise use -g node@24
 mise set -g GEMINI_API_KEY=https://aistudio.google.com/apikey
-npm install -g @google/gemini-cli
-gemini
+mise exec node@24 -- npm install -g @google/gemini-cli
+mise exec node@24 -- GEMINI_API_KEY=https://aistudio.google.com/apikey && gemini
 ```
