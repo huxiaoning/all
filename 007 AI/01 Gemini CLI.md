@@ -64,6 +64,6 @@ docker run -it --rm --name mise mise:1.0 bash
 mise ls
 mise use -g node@24
 mise set -g GEMINI_API_KEY=https://aistudio.google.com/apikey
-mise exec node@24 -- npm install -g @google/gemini-cli
-mise exec node@24 -- GEMINI_API_KEY=https://aistudio.google.com/apikey && gemini
+npm install -g @google/gemini-cli
+gemini
 ```
