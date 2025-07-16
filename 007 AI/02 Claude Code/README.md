@@ -2,6 +2,8 @@
 
 - [claude-code](https://www.anthropic.com/claude-code)
 - [anyrouter](https://anyrouter.top/)
+- [文档](https://docs.anthropic.com/en/docs/claude-code/overview)
+
 
 ```bash
 mise exec node@24 -- npm install -g socks-proxy-agent --registry=https://registry.npmmirror.com
