@@ -6,6 +6,7 @@
 
 
 ```bash
+# WSL
 mise exec node@24 -- npm install -g socks-proxy-agent --registry=https://registry.npmmirror.com
 mise exec node@24 -- npm config set proxy socks://172.20.20.208:7890
 mise exec node@24 -- npm config set https-proxy socks://172.20.20.208:7890
