@@ -12,6 +12,7 @@ mise exec node@24 -- claude --version
 # export ANTHROPIC_BASE_URL=https://anyrouter.top
 $env:ANTHROPIC_AUTH_TOKEN=sk-...
 $env:ANTHROPIC_BASE_URL=https://anyrouter.top
+$env:CLAUDE_CODE_GIT_BASH_PATH=F:\Scoop\.scoop\apps\git\current\bin\bash.exe
 
 mise exec node@24 -- claude
 ```
