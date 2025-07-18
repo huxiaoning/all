@@ -43,7 +43,8 @@ RUN apt update -y \
     && echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list \
     && apt update \
     && apt install -y mise \
-    && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+    && echo 'eval "$(mise activate bash)"' >> ~/.bashrc \
+    && mise use -g node
 '@ > Dockerfile4claude
 
 # 删除旧的镜像
