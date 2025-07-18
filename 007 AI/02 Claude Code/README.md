@@ -46,7 +46,9 @@ RUN apt update -y \
     && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
 '@ > Dockerfile4claude
 
-
+# 删除旧的镜像
+if (docker images -q claude:1.0) { docker rmi claude:1.0 }
+# 构建新的镜像
 docker build -f Dockerfile4claude -t claude:1.0 .
 
 rm -r Dockerfile4claude
