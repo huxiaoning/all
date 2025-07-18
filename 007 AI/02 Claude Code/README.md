@@ -31,3 +31,23 @@ $env:CLAUDE_CODE_GIT_BASH_PATH=F:\Scoop\.scoop\apps\git\current\bin\bash.exe
 
 mise exec node@24 -- claude
 ```
+
+#### Docker
+```powershell
+@'
+FROM ubuntu:latest
+RUN apt update -y \
+    && apt install -y gpg sudo wget curl \
+    && install -dm 755 /etc/apt/keyrings \
+    && wget -qO - https://mise.jdx.dev/gpg-key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/mise-archive-keyring.gpg 1> /dev/null \
+    && echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.gpg arch=amd64] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list \
+    && apt update \
+    && apt install -y mise \
+    && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+'@ > Dockerfile_for_claude
+
+
+docker build -f Dockerfile_for_claude -t mise:1.0 .
+
+rm -r Dockerfile_for_claude
+```
