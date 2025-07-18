@@ -44,8 +44,8 @@ RUN apt update -y \
     && apt update \
     && apt install -y mise \
     && echo 'eval "$(mise activate bash)"' >> ~/.bashrc \
-    && mise use -g node \
-    && npm install -g @anthropic-ai/claude-code
+    && mise use -g node@latest \
+    && mise exec node@latest -- npm install -g @anthropic-ai/claude-code
 '@ > Dockerfile4claude
 
 # 删除旧的镜像
