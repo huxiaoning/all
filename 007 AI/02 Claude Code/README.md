@@ -47,7 +47,7 @@ RUN apt update -y \
 '@ > Dockerfile4claude
 
 
-docker build -f Dockerfile4claude -t mise:1.0 .
+docker build -f Dockerfile4claude -t claude:1.0 .
 
 rm -r Dockerfile4claude
 ```
