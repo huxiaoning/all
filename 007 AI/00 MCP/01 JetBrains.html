@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>📄 gemini-balance · 笔记</title>
+        <title>📄 JetBrains · 笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -70,10 +70,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../02 Claude Code/" />
+    <link rel="next" href="../01 Gemini/" />
     
     
-    <link rel="prev" href="01 Gemini CLI.html" />
+    <link rel="prev" href="./" />
     
 
     <style>
@@ -733,9 +733,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../00 MCP/">
+        <li class="chapter " data-level="1.8.1" data-path="./">
             
-                <a href="../00 MCP/">
+                <a href="./">
             
                     
                     🗂️ MCP
@@ -747,9 +747,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1.1" data-path="../00 MCP/01 JetBrains.html">
+        <li class="chapter active" data-level="1.8.1.1" data-path="01 JetBrains.html">
             
-                <a href="../00 MCP/01 JetBrains.html">
+                <a href="01 JetBrains.html">
             
                     
                     📄 JetBrains
@@ -765,9 +765,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="./">
+        <li class="chapter " data-level="1.8.2" data-path="../01 Gemini/">
             
-                <a href="./">
+                <a href="../01 Gemini/">
             
                     
                     🗂️ Gemini
@@ -779,9 +779,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.2.1" data-path="01 Gemini CLI.html">
+        <li class="chapter " data-level="1.8.2.1" data-path="../01 Gemini/01 Gemini CLI.html">
             
-                <a href="01 Gemini CLI.html">
+                <a href="../01 Gemini/01 Gemini CLI.html">
             
                     
                     📄 Gemini CLI
@@ -792,9 +792,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.2.2" data-path="02 gemini-balance.html">
+        <li class="chapter " data-level="1.8.2.2" data-path="../01 Gemini/02 gemini-balance.html">
             
-                <a href="02 gemini-balance.html">
+                <a href="../01 Gemini/02 gemini-balance.html">
             
                     
                     📄 gemini-balance
@@ -858,7 +858,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >📄 gemini-balance</a>
+        <a href="../.." >📄 JetBrains</a>
     </h1>
 </div>
 
@@ -873,8 +873,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="gemini-balance"><a href="https://github.com/snailyp/gemini-balance" target="_blank">gemini-balance</a></h3>
-
+                                <h3 id="jetbrains"><a href="https://github.com/JetBrains/mcp-jetbrains" target="_blank">JetBrains</a></h3>
+<h4 id="gemini-cli">Gemini CLI</h4>
+<pre><code class="lang-bash">$ vim .gemini/extensions/my-extension/gemini-extension.json
+{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;my-extension&quot;</span>,
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+  <span class="hljs-string">&quot;mcpServers&quot;</span>: {
+    <span class="hljs-string">&quot;jetbrains&quot;</span>: {
+      <span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;npx&quot;</span>,
+      <span class="hljs-string">&quot;args&quot;</span>: [
+        <span class="hljs-string">&quot;-y&quot;</span>,
+        <span class="hljs-string">&quot;@jetbrains/mcp-proxy&quot;</span>
+      ]
+    },
+    <span class="hljs-string">&quot;time&quot;</span>: {
+      <span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;uvx&quot;</span>,
+      <span class="hljs-string">&quot;args&quot;</span>: [
+        <span class="hljs-string">&quot;mcp-server-time&quot;</span>,
+        <span class="hljs-string">&quot;--local-timezone=America/New_York&quot;</span>
+      ]
+    }
+  },
+  <span class="hljs-string">&quot;contextFileName&quot;</span>: <span class="hljs-string">&quot;GEMINI.md&quot;</span>,
+  <span class="hljs-string">&quot;excludeTools&quot;</span>: [
+    <span class="hljs-string">&quot;run_shell_command&quot;</span>
+  ]
+}
+</code></pre>
+<h3 id="sugment-code">Sugment Code</h3>
+<pre><code>npx -y @jetbrains/mcp-proxy
+</code></pre>
                                 
                                 </section>
                             
@@ -901,12 +930,12 @@
 
             
                 
-                <a href="01 Gemini CLI.html" class="navigation navigation-prev " aria-label="Previous page: 📄 Gemini CLI">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 🗂️ MCP">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../02 Claude Code/" class="navigation navigation-next " aria-label="Next page: 📁 Claude Code">
+                <a href="../01 Gemini/" class="navigation navigation-next " aria-label="Next page: 🗂️ Gemini">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -917,7 +946,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"📄 gemini-balance","level":"1.8.2.2","depth":3,"next":{"title":"📁 Claude Code","level":"1.8.3","depth":2,"path":"007 AI/02 Claude Code/README.md","ref":"007 AI/02 Claude Code/README.md","articles":[]},"previous":{"title":"📄 Gemini CLI","level":"1.8.2.1","depth":3,"path":"007 AI/01 Gemini/01 Gemini CLI.md","ref":"007 AI/01 Gemini/01 Gemini CLI.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"007 AI/01 Gemini/02 gemini-balance.md","mtime":"2025-07-18T05:44:09.424Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-18T05:44:48.484Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"📄 JetBrains","level":"1.8.1.1","depth":3,"next":{"title":"🗂️ Gemini","level":"1.8.2","depth":2,"path":"007 AI/01 Gemini/README.md","ref":"007 AI/01 Gemini/README.md","articles":[{"title":"📄 Gemini CLI","level":"1.8.2.1","depth":3,"path":"007 AI/01 Gemini/01 Gemini CLI.md","ref":"007 AI/01 Gemini/01 Gemini CLI.md","articles":[]},{"title":"📄 gemini-balance","level":"1.8.2.2","depth":3,"path":"007 AI/01 Gemini/02 gemini-balance.md","ref":"007 AI/01 Gemini/02 gemini-balance.md","articles":[]}]},"previous":{"title":"🗂️ MCP","level":"1.8.1","depth":2,"path":"007 AI/00 MCP/README.md","ref":"007 AI/00 MCP/README.md","articles":[{"title":"📄 JetBrains","level":"1.8.1.1","depth":3,"path":"007 AI/00 MCP/01 JetBrains.md","ref":"007 AI/00 MCP/01 JetBrains.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","edit-link","toggle-chapters","code"],"root":".","styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://raw.githubusercontent.com/huxiaoning/img/master/alipay.jpg","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://raw.githubusercontent.com/huxiaoning/img/master/wechatpay.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"huxiaoning/all","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"编辑此页面","base":"https://github.com/huxiaoning/all/edit/master"},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"Aidan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"*","description":"笔记"},"file":{"path":"007 AI/00 MCP/01 JetBrains.md","mtime":"2025-07-18T05:44:09.424Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-18T05:44:48.484Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
