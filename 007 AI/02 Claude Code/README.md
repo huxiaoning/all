@@ -44,10 +44,10 @@ RUN apt update -y \
     && apt update \
     && apt install -y mise \
     && echo 'eval "$(mise activate bash)"' >> ~/.bashrc
-'@ > Dockerfile_for_claude
+'@ > Dockerfile4claude
 
 
-docker build -f Dockerfile_for_claude -t mise:1.0 .
+docker build -f Dockerfile4claude -t mise:1.0 .
 
-rm -r Dockerfile_for_claude
+rm -r Dockerfile4claude
 ```
