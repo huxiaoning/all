@@ -59,9 +59,16 @@ rm -r Dockerfile4claude
 $anyrouterKey="sk-..."
 docker run -e ANTHROPIC_AUTH_TOKEN=$anyrouterKey -e ANTHROPIC_BASE_URL=https://anyrouter.top -v ${PWD}:/app -it --rm claude:1.0 bash
 docker run -e ANTHROPIC_AUTH_TOKEN=$anyrouterKey -e ANTHROPIC_BASE_URL=https://pmpjfbhq.cn-nb1.rainapp.top -v ${PWD}:/app -it --rm claude:1.0 bash
+claude -version
+claude
 
 $wenwenKey="sk-..."
 docker run -e ANTHROPIC_AUTH_TOKEN=$wenwenKey -e ANTHROPIC_BASE_URL=https://code.wenwen-ai.com -v ${PWD}:/app -it --rm claude:1.0 bash
+claude -version
+claude
+
+$aihubmixKey="sk-..."
+docker run -e ANTHROPIC_AUTH_TOKEN=$aihubmixKey -e ANTHROPIC_BASE_URL=https://aihubmix.com -v ${PWD}:/app -it --rm claude:1.0 bash
 claude -version
 claude
 ```
