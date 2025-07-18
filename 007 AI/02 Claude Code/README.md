@@ -55,5 +55,6 @@ docker build -f Dockerfile4claude -t claude:1.0 .
 
 rm -r Dockerfile4claude
 
-docker run -it --rm claude:1.0 bash
+
+docker run -e ANTHROPIC_AUTH_TOKEN=$anyrouterKey -e ANTHROPIC_BASE_URL=https://anyrouter.top -it --rm claude:1.0 bash
 ```
