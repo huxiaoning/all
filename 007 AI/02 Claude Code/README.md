@@ -36,6 +36,7 @@ mise exec node@24 -- claude
 ```powershell
 @'
 FROM ubuntu:latest
+WORKDIR /app
 RUN apt update -y \
     && apt install -y gpg sudo wget curl \
     && install -dm 755 /etc/apt/keyrings \
