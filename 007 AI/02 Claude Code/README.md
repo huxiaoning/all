@@ -52,4 +52,6 @@ if (docker images -q claude:1.0) { docker rmi claude:1.0 }
 docker build -f Dockerfile4claude -t claude:1.0 .
 
 rm -r Dockerfile4claude
+
+docker run -it --rm claude:1.0 bash
 ```
