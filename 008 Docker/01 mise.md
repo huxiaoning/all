@@ -23,7 +23,7 @@ rm -r Dockerfile4mise
 
 
 docker run -it --rm mise:1.0 bash
-mise ls
+mise version
 
 
 ```
