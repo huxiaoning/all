@@ -19,6 +19,6 @@ rm -r Dockerfile4sdkman
 
 docker run -it --rm sdkman:1.0 bash
 sdk version
-
+sdk install mcs
 
 ```
