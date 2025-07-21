@@ -26,4 +26,8 @@ docker run -it --rm mise:1.0 bash
 mise version
 mise use -g ubi:mthmulders/mcs
 mcs search nacos-client
+
+# npm install -g @google/gemini-cli
+mise use -g node
+mise use -g npm:@google/gemini-cli
 ```
