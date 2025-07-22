@@ -58,7 +58,7 @@
 
 
 #### memory
-```md
+```markdown
 - 我所说的选中的代码是指我在Jetbrains Idea中选中的代码，而不是kiro中选中的代码
 - 如果我直接说优化或者其他请求，也是指要优化我在Jetbrains Idea中选中的代码，而不是kiro中选中的代码
 - 始终使用中文回复我
