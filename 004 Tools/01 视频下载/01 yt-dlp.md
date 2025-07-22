@@ -13,6 +13,7 @@ yt-dlp https://www.youtube.com/watch?v=RhOo9wQMxeQ --cookies-from-browser chrome
 
 #### 02 [GUI](https://github.com/oleksis/youtube-dl-gui)
 ```powershell
+# 我没有成功
 # 安装完以后程序名是 yt-dlg.exe
 scoop install youtube-dl-gui
 ```
@@ -21,4 +22,8 @@ scoop install youtube-dl-gui
 #### 03 media-downloader
 ```powershell
 scoop install media-downloader
+## 设置
+### 语言 设置为中文
+### 代理 代理 127.0.0.1:7890
+### Engine's Options --cookies-from-browser chrome
 ```
