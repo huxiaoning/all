@@ -19,11 +19,16 @@ scoop install youtube-dl-gui
 ```
 
 
-#### 03 media-downloader
+#### 03 media-downloader (推荐)
 ```powershell
 scoop install media-downloader
 ## 设置
 ### 语言 设置为中文
 ### 代理 代理 127.0.0.1:7890
 ### Engine's Options --cookies-from-browser chrome
+```
+
+#### 04 FDM
+```powershell
+# 这个也是不行
 ```
