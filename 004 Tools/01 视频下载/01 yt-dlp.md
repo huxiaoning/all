@@ -25,7 +25,7 @@ scoop install media-downloader
 ## 设置
 ### 语言 设置为中文
 ### 代理 127.0.0.1:7890
-### Engine's Options --cookies-from-browser chrome
+### Engine's Options Name Of Web Browser To Get Cookies From chrome
 ```
 
 #### 04 FDM
